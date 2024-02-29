@@ -32,3 +32,4 @@ on:
   push:
     branches:
       - master
+      - dev

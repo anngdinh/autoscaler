@@ -220,11 +220,11 @@ hostNetwork: false
 
 image:
   # image.repository -- Image repository
-  repository: registry.k8s.io/autoscaling/cluster-autoscaler
+  repository: vcr.vngcloud.vn/60108-annd2-ingress/cluster-autoscaler-amd64
   # image.tag -- Image tag
-  tag: v1.29.0
+  tag: v0.0.0
   # image.pullPolicy -- Image pull policy
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   ## Optionally specify an array of imagePullSecrets.
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
