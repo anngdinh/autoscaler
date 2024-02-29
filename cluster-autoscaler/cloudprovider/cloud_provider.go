@@ -30,16 +30,12 @@ import (
 const (
 	// AzureProviderName gets the provider name of azure
 	AzureProviderName = "azure"
-	// AlicloudProviderName gets the provider name of alicloud
-	AlicloudProviderName = "alicloud"
 	// AwsProviderName gets the provider name of aws
 	AwsProviderName = "aws"
 	// BaiducloudProviderName gets the provider name of baiducloud
 	BaiducloudProviderName = "baiducloud"
 	// BizflyCloudProviderName gets the provider name of bizflycloud
 	BizflyCloudProviderName = "bizflycloud"
-	// BrightboxProviderName gets the provider name of brightbox
-	BrightboxProviderName = "brightbox"
 	// CherryServersProviderName gets the provider name of cherry servers
 	CherryServersProviderName = "cherryservers"
 	// CloudStackProviderName gets the provider name of cloudstack
@@ -52,8 +48,6 @@ const (
 	ExoscaleProviderName = "exoscale"
 	// GceProviderName gets the provider name of gce
 	GceProviderName = "gce"
-	// HetznerProviderName gets the provider name of hetzner
-	HetznerProviderName = "hetzner"
 	// MagnumProviderName gets the provider name of magnum
 	MagnumProviderName = "magnum"
 	// KamateraProviderName gets the provider name of kamatera

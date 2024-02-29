@@ -1,5 +1,5 @@
-//go:build !gce && !aws && !azure && !kubemark && !alicloud && !magnum && !digitalocean && !clusterapi && !huaweicloud && !ionoscloud && !linode && !hetzner && !bizflycloud && !brightbox && !equinixmetal && !oci && !vultr && !tencentcloud && !scaleway && !externalgrpc && !civo && !rancher && !volcengine && !baiducloud && !cherry && !cloudstack && !exoscale && !kamatera && !ovhcloud
-// +build !gce,!aws,!azure,!kubemark,!alicloud,!magnum,!digitalocean,!clusterapi,!huaweicloud,!ionoscloud,!linode,!hetzner,!bizflycloud,!brightbox,!equinixmetal,!oci,!vultr,!tencentcloud,!scaleway,!externalgrpc,!civo,!rancher,!volcengine,!baiducloud,!cherry,!cloudstack,!exoscale,!kamatera,!ovhcloud
+//go:build !gce && !aws && !azure && !kubemark && !magnum && !digitalocean && !clusterapi && !huaweicloud && !ionoscloud && !linode && !bizflycloud && !equinixmetal && !oci && !vultr && !tencentcloud && !scaleway && !externalgrpc && !civo && !rancher && !volcengine && !baiducloud && !cherry && !cloudstack && !exoscale && !kamatera && !ovhcloud
+// +build !gce,!aws,!azure,!kubemark,!magnum,!digitalocean,!clusterapi,!huaweicloud,!ionoscloud,!linode,!bizflycloud,!equinixmetal,!oci,!vultr,!tencentcloud,!scaleway,!externalgrpc,!civo,!rancher,!volcengine,!baiducloud,!cherry,!cloudstack,!exoscale,!kamatera,!ovhcloud
 
 /*
 Copyright 2018 The Kubernetes Authors.
@@ -21,12 +21,10 @@ package builder
 
 import (
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/alicloud"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/aws"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/azure"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/baiducloud"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/bizflycloud"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/brightbox"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/cherryservers"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/civo"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/cloudstack"
@@ -36,7 +34,6 @@ import (
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/exoscale"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/externalgrpc"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/gce"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/hetzner"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/huaweicloud"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/ionoscloud"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/kamatera"
@@ -59,7 +56,6 @@ var AvailableCloudProviders = []string{
 	cloudprovider.AwsProviderName,
 	cloudprovider.AzureProviderName,
 	cloudprovider.GceProviderName,
-	cloudprovider.AlicloudProviderName,
 	cloudprovider.CherryServersProviderName,
 	cloudprovider.CloudStackProviderName,
 	cloudprovider.BaiducloudProviderName,
@@ -68,7 +64,6 @@ var AvailableCloudProviders = []string{
 	cloudprovider.ExoscaleProviderName,
 	cloudprovider.ExternalGrpcProviderName,
 	cloudprovider.HuaweicloudProviderName,
-	cloudprovider.HetznerProviderName,
 	cloudprovider.OracleCloudProviderName,
 	cloudprovider.OVHcloudProviderName,
 	cloudprovider.ClusterAPIProviderName,
@@ -77,7 +72,6 @@ var AvailableCloudProviders = []string{
 	cloudprovider.KwokProviderName,
 	cloudprovider.LinodeProviderName,
 	cloudprovider.BizflyCloudProviderName,
-	cloudprovider.BrightboxProviderName,
 	cloudprovider.EquinixMetalProviderName,
 	cloudprovider.VultrProviderName,
 	cloudprovider.TencentcloudProviderName,
@@ -103,16 +97,12 @@ func buildCloudProvider(opts config.AutoscalingOptions,
 		return aws.BuildAWS(opts, do, rl)
 	case cloudprovider.AzureProviderName:
 		return azure.BuildAzure(opts, do, rl)
-	case cloudprovider.AlicloudProviderName:
-		return alicloud.BuildAlicloud(opts, do, rl)
 	case cloudprovider.CherryServersProviderName:
 		return cherryservers.BuildCherry(opts, do, rl)
 	case cloudprovider.CloudStackProviderName:
 		return cloudstack.BuildCloudStack(opts, do, rl)
 	case cloudprovider.BaiducloudProviderName:
 		return baiducloud.BuildBaiducloud(opts, do, rl)
-	case cloudprovider.BrightboxProviderName:
-		return brightbox.BuildBrightbox(opts, do, rl)
 	case cloudprovider.DigitalOceanProviderName:
 		return digitalocean.BuildDigitalOcean(opts, do, rl)
 	case cloudprovider.ExoscaleProviderName:
@@ -125,8 +115,6 @@ func buildCloudProvider(opts config.AutoscalingOptions,
 		return huaweicloud.BuildHuaweiCloud(opts, do, rl)
 	case cloudprovider.OVHcloudProviderName:
 		return ovhcloud.BuildOVHcloud(opts, do, rl)
-	case cloudprovider.HetznerProviderName:
-		return hetzner.BuildHetzner(opts, do, rl)
 	case cloudprovider.PacketProviderName, cloudprovider.EquinixMetalProviderName:
 		return equinixmetal.BuildCloudProvider(opts, do, rl)
 	case cloudprovider.ClusterAPIProviderName:
