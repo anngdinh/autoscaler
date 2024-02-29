@@ -32,28 +32,18 @@ const (
 	AzureProviderName = "azure"
 	// AwsProviderName gets the provider name of aws
 	AwsProviderName = "aws"
-	// CherryServersProviderName gets the provider name of cherry servers
-	CherryServersProviderName = "cherryservers"
 	// CloudStackProviderName gets the provider name of cloudstack
 	CloudStackProviderName = "cloudstack"
 	// ClusterAPIProviderName gets the provider name of clusterapi
 	ClusterAPIProviderName = "clusterapi"
 	// DigitalOceanProviderName gets the provider name of digitalocean
 	DigitalOceanProviderName = "digitalocean"
-	// ExoscaleProviderName gets the provider name of exoscale
-	ExoscaleProviderName = "exoscale"
 	// GceProviderName gets the provider name of gce
 	GceProviderName = "gce"
 	// MagnumProviderName gets the provider name of magnum
 	MagnumProviderName = "magnum"
-	// KamateraProviderName gets the provider name of kamatera
-	KamateraProviderName = "kamatera"
-	// KubemarkProviderName gets the provider name of kubemark
-	KubemarkProviderName = "kubemark"
 	// OracleCloudProviderName gets the provider name of oci
 	OracleCloudProviderName = "oci"
-	// OVHcloudProviderName gets the provider name of ovhcloud
-	OVHcloudProviderName = "ovhcloud"
 	// LinodeProviderName gets the provider name of linode
 	LinodeProviderName = "linode"
 	// ScalewayProviderName gets the provider name of scaleway
@@ -70,8 +60,6 @@ const (
 	TencentcloudProviderName = "tencentcloud"
 	// ExternalGrpcProviderName gets the provider name of the external grpc provider
 	ExternalGrpcProviderName = "externalgrpc"
-	// CivoProviderName gets the provider name of civo
-	CivoProviderName = "civo"
 	// RancherProviderName gets the provider name of rancher
 	RancherProviderName = "rancher"
 )

@@ -243,21 +243,6 @@ associated with the cluster autoscaler deployment. The service account will
 need permission to `get`, `list`, and `watch` the infrastructure machine
 templates for your infrastructure provider.
 
-For example, when using the [Kubemark provider](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark)
-you will need to set the following permissions:
-
-```yaml
-rules:
-  - apiGroups:
-    - infrastructure.cluster.x-k8s.io
-    resources:
-    - kubemarkmachinetemplates
-    verbs:
-    - get
-    - list
-    - watch
-```
-
 #### Pre-defined labels and taints on nodes scaled from zero
 
 To provide labels or taint information for scale from zero, the optional
