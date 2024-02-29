@@ -32,10 +32,6 @@ const (
 	AzureProviderName = "azure"
 	// AwsProviderName gets the provider name of aws
 	AwsProviderName = "aws"
-	// BaiducloudProviderName gets the provider name of baiducloud
-	BaiducloudProviderName = "baiducloud"
-	// BizflyCloudProviderName gets the provider name of bizflycloud
-	BizflyCloudProviderName = "bizflycloud"
 	// CherryServersProviderName gets the provider name of cherry servers
 	CherryServersProviderName = "cherryservers"
 	// CloudStackProviderName gets the provider name of cloudstack
@@ -54,12 +50,6 @@ const (
 	KamateraProviderName = "kamatera"
 	// KubemarkProviderName gets the provider name of kubemark
 	KubemarkProviderName = "kubemark"
-	// KwokProviderName gets the provider name of kwok
-	KwokProviderName = "kwok"
-	// HuaweicloudProviderName gets the provider name of huaweicloud
-	HuaweicloudProviderName = "huaweicloud"
-	// IonoscloudProviderName gets the provider name of ionoscloud
-	IonoscloudProviderName = "ionoscloud"
 	// OracleCloudProviderName gets the provider name of oci
 	OracleCloudProviderName = "oci"
 	// OVHcloudProviderName gets the provider name of ovhcloud

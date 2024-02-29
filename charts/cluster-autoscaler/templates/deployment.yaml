@@ -205,9 +205,6 @@ spec:
                 secretKeyRef:
                   key: api-zone
                   name: {{ default (include "cluster-autoscaler.fullname" .) .Values.secretKeyRefNameOverride }}
-          {{- else if eq .Values.cloudProvider "kwok" }}
-            - name: KWOK_PROVIDER_CONFIGMAP
-              value: "{{.Values.kwokConfigMapName | default "kwok-provider-config"}}"
           {{- end }}
           {{- range $key, $value := .Values.extraEnv }}
             - name: {{ $key }}
