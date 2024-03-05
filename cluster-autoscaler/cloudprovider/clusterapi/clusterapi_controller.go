@@ -383,6 +383,7 @@ func getCAPIGroup() string {
 	if g == "" {
 		g = defaultCAPIGroup
 	}
+	klog.V(4).Infoln("hi from annd2")
 	klog.V(4).Infof("Using API Group %q", g)
 	return g
 }
