@@ -44,20 +44,10 @@ const (
 	MagnumProviderName = "magnum"
 	// OracleCloudProviderName gets the provider name of oci
 	OracleCloudProviderName = "oci"
-	// LinodeProviderName gets the provider name of linode
-	LinodeProviderName = "linode"
-	// ScalewayProviderName gets the provider name of scaleway
-	ScalewayProviderName = "scaleway"
 	// VolcengineProviderName gets the provider name of volcengine
 	VolcengineProviderName = "volcengine"
-	// VultrProviderName gets the provider name of vultr
-	VultrProviderName = "vultr"
 	// PacketProviderName gets the provider name of packet
 	PacketProviderName = "packet"
-	// EquinixMetalProviderName gets the provider name of packet
-	EquinixMetalProviderName = "equinixmetal"
-	// TencentcloudProviderName gets the provider name of tencentcloud
-	TencentcloudProviderName = "tencentcloud"
 	// ExternalGrpcProviderName gets the provider name of the external grpc provider
 	ExternalGrpcProviderName = "externalgrpc"
 	// RancherProviderName gets the provider name of rancher

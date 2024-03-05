@@ -17,15 +17,10 @@ You should also take a look at the notes and "gotchas" for your specific cloud p
 * [Azure](./cloudprovider/azure/README.md)
 * [CloudStack](./cloudprovider/cloudstack/README.md)
 * [DigitalOcean](./cloudprovider/digitalocean/README.md)
-* [Equinix Metal](cloudprovider/equinixmetal/README.md#notes)
 * [External gRPC](./cloudprovider/externalgrpc/README.md)
-* [Linode](./cloudprovider/linode/README.md)
 * [Magnum](./cloudprovider/magnum/README.md)
 * [OracleCloud](./cloudprovider/oci/README.md)
 * [Rancher](./cloudprovider/rancher/README.md)
-* [Scaleway](./cloudprovider/scaleway/README.md)
-* [TencentCloud](./cloudprovider/tencentcloud/README.md)
-* [Vultr](./cloudprovider/vultr/README.md)
 
 # Releases
 
@@ -187,10 +182,6 @@ Supported cloud providers:
 * DigitalOcean https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/digitalocean/README.md
 * Equinix Metal https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/packet/README.md
 * External gRPC https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/externalgrpc/README.md
-* Linode https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/linode/README.md
 * Magnum https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/magnum/README.md
 * OracleCloud https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/oci/README.md
 * Rancher https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/rancher/README.md
-* Scaleway https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/scaleway/README.md
-* TencentCloud https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/tencentcloud/README.md
-* Vultr https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/vultr/README.md

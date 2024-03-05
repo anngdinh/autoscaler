@@ -1,5 +1,5 @@
-//go:build !gce && !aws && !azure && !magnum && !digitalocean && !clusterapi && !linode && !equinixmetal && !oci && !vultr && !tencentcloud && !scaleway && !externalgrpc && !rancher && !volcengine && !cloudstack
-// +build !gce,!aws,!azure,!magnum,!digitalocean,!clusterapi,!linode,!equinixmetal,!oci,!vultr,!tencentcloud,!scaleway,!externalgrpc,!rancher,!volcengine,!cloudstack
+//go:build !gce && !aws && !azure && !magnum && !digitalocean && !clusterapi && !oci && !externalgrpc && !rancher && !volcengine && !cloudstack
+// +build !gce,!aws,!azure,!magnum,!digitalocean,!clusterapi,!oci,!externalgrpc,!rancher,!volcengine,!cloudstack
 
 /*
 Copyright 2018 The Kubernetes Authors.
@@ -26,17 +26,12 @@ import (
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/cloudstack"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/clusterapi"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/digitalocean"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/equinixmetal"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/externalgrpc"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/gce"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/linode"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/magnum"
 	oci "k8s.io/autoscaler/cluster-autoscaler/cloudprovider/oci/instancepools"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/rancher"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/scaleway"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/tencentcloud"
 	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/volcengine"
-	"k8s.io/autoscaler/cluster-autoscaler/cloudprovider/vultr"
 	"k8s.io/autoscaler/cluster-autoscaler/config"
 	"k8s.io/client-go/informers"
 )
@@ -52,11 +47,6 @@ var AvailableCloudProviders = []string{
 	cloudprovider.ExternalGrpcProviderName,
 	cloudprovider.OracleCloudProviderName,
 	cloudprovider.ClusterAPIProviderName,
-	cloudprovider.LinodeProviderName,
-	cloudprovider.EquinixMetalProviderName,
-	cloudprovider.VultrProviderName,
-	cloudprovider.TencentcloudProviderName,
-	cloudprovider.ScalewayProviderName,
 	cloudprovider.RancherProviderName,
 	cloudprovider.VolcengineProviderName,
 }
@@ -83,20 +73,10 @@ func buildCloudProvider(opts config.AutoscalingOptions,
 		return externalgrpc.BuildExternalGrpc(opts, do, rl)
 	case cloudprovider.MagnumProviderName:
 		return magnum.BuildMagnum(opts, do, rl)
-	case cloudprovider.PacketProviderName, cloudprovider.EquinixMetalProviderName:
-		return equinixmetal.BuildCloudProvider(opts, do, rl)
 	case cloudprovider.ClusterAPIProviderName:
 		return clusterapi.BuildClusterAPI(opts, do, rl)
-	case cloudprovider.LinodeProviderName:
-		return linode.BuildLinode(opts, do, rl)
 	case cloudprovider.OracleCloudProviderName:
 		return oci.BuildOCI(opts, do, rl)
-	case cloudprovider.VultrProviderName:
-		return vultr.BuildVultr(opts, do, rl)
-	case cloudprovider.TencentcloudProviderName:
-		return tencentcloud.BuildTencentcloud(opts, do, rl)
-	case cloudprovider.ScalewayProviderName:
-		return scaleway.BuildScaleway(opts, do, rl)
 	case cloudprovider.RancherProviderName:
 		return rancher.BuildRancher(opts, do, rl)
 	case cloudprovider.VolcengineProviderName:
